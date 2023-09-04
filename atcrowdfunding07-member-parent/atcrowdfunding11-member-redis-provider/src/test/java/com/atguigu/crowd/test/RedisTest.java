@@ -1,0 +1,26 @@
+package com.atguigu.crowd.test;
+
+import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.test.context.junit4.SpringRunner;
+
+/**
+ * Created by IntelliJ IDEA.
+ *
+ * @Author : LiuDongBin
+ * @create 2023/7/13 10:27
+ */
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class RedisTest {
+    @Autowired
+    private StringRedisTemplate redisTemplate;
+    @Test
+    public void testSet(){
+        redisTemplate.opsForValue().set("test","ldb");
+    }
+}

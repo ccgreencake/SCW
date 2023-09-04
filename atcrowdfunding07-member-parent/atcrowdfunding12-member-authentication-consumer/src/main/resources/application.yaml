@@ -1,0 +1,30 @@
+server:
+  port: 4001
+spring:
+  application:
+    name: atguigu-crowd-auth
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  redis:
+    host: 127.0.0.1
+  session:
+    store-type: redis
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1001/eureka
+
+short:
+  message:
+    smsSignId: 2e65b1bb3d054466b82f0c9d125465e2
+    templateId: 908e94ccf08b4476ba6c876d13f084ad
+    host: https://gyytz.market.alicloudapi.com
+    path: /sms/smsSend
+    method: POST
+    appcode: 7b570678bdaf43a0ad6ac0297f1cad20
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
